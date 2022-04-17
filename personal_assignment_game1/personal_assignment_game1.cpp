@@ -153,6 +153,8 @@ void mouseCallBack(ObjectID object, int x, int y, MouseAction action) {
 int main() {
 	setMouseCallback(mouseCallBack);
 	mainscene = createScene("mainscene", "images\\background.png");
+	setGameOption(GameOption::GAME_OPTION_INVENTORY_BUTTON, false);
+	setGameOption(GameOption::GAME_OPTION_MESSAGE_BOX_BUTTON, false);
 
 	assignment[0] = createObject("과제1", "images\\1_unfinished.png", mainscene, 115, 60 + 200*2);
 	assignment[1] = createObject("과제2", "images\\2_unfinished.png", mainscene, 115 + 150*2, 60 + 200 * 2);
