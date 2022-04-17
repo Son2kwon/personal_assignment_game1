@@ -1,4 +1,4 @@
-﻿#include<bangtal.h>
+#include<bangtal.h>
 #include<stdio.h>
 #include<stdlib.h>
 #include<time.h>
@@ -22,15 +22,15 @@ void set_stress() {
 
 void Gameset() {
 	if (finished_assignment == 4 && date <= 4) {
-		showMessage("축하합니다. 당신은 모든 과제를 끝냈습니다. 이제 다음 과제가 당신을 기다릴 것입니다.");
+		showMessage("축하합니다. 기한 안에 모든 과제를 끝내셨습니다. \n 그렇지만 다음주에는 중간고사가 있네요. \n 파이팅!");
 		ending = true;
 	}
 	else if (date == 5) {
-		showMessage("저런. 기간 안에 과제를 끝내지 못했습니다. 괜찮습니다.");
+		showMessage("기한 안에 과제를 끝내지 못했습니다. \n 하지만 괜찮습니다. \n 바로 앞에는 중간고사가 있거든요.");
 		ending = true;
 	}
 	else if (stress == 5) {
-		showMessage("스트레스 과다로 사망하셨습니다.");
+		showMessage("스트레스 과다로 사망하셨습니다. 가장 현실적인 엔딩이네요.");
 		ending = true;
 	}
 }
@@ -94,7 +94,7 @@ void mouseCallBack(ObjectID object, int x, int y, MouseAction action) {
 	}
 	else if (object == assignment[2] && check_assignment3 == false && ending == false) {
 		setObjectImage(assignment[2], "images\\3_finished.png");
-		stress += 1;
+		stress += 3;
 		set_stress_image();
 		task += 1;
 		finished_assignment += 1;
@@ -106,7 +106,7 @@ void mouseCallBack(ObjectID object, int x, int y, MouseAction action) {
 	}
 	else if (object == assignment[3] && check_assignment4 == false && ending == false) {
 		setObjectImage(assignment[3], "images\\4_finished.png");
-		stress += 1;
+		stress += 2;
 		set_stress_image();
 		task += 1;
 		finished_assignment += 1;
@@ -145,7 +145,7 @@ void mouseCallBack(ObjectID object, int x, int y, MouseAction action) {
 		Gameset();
 	}
 	else if (object == stop && ending == false) {
-		showMessage("자퇴엔딩. 낭만과 행복을 찾아 떠나십시오. 모든 대학생이 여러분을 부러워 할 것입니다.");
+		showMessage("축하합니다. 당신은 낭만과 행복을 찾아 대학교를 떠났습니다. \n 모든 대하생이 부러워 할 것입니다. \n 하지만 몇 년 뒤에는 바뀔지도 모르니 지금 즐기시길 바랍니다.");
 	}
 	else if (object == end) endGame();
 }
